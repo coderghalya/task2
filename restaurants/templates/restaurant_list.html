@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Coolio</title>
+</head>
+<body>
+    {% for restaurant in feed %}
+        <a href="/restaurant/detail/{{restaurant.id}}"><h1>{{restaurant.name}}</h1></a>
+         -<small>{{article.discription}} - {{article.opening_time}} - {{article.closing_time}</small>
+    {% endfor %}
+</body>
+</html>
