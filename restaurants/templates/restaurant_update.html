@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST" action="{% url 'restaurant_update' %}">
+	{% csrf_token %}
+	{{form.as_p}}
+	<input type="submit" value="Update" class="btn btn-outline-success">
+</form>
+{% endblock content %}
+
