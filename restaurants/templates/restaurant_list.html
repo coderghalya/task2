@@ -7,7 +7,31 @@
 <body>
     {% for restaurant in feed %}
         <a href="/restaurant/detail/{{restaurant.id}}"><h1>{{restaurant.name}}</h1></a>
-         -<small>{{article.logo}} - {{article.discription}} - {{article.opening_time}} - {{article.closing_time}</small>
+         <ul>
+         	<li>
+         		<img src="{{restaurant.logo.url}}">
+         	</li>
+         	<li>
+         		<strong>Description: </strong>{{restaurant.discription}}
+         	</li>
+         	<li>
+         		<strong>Opening Time: </strong>{{restaurant.opening_time}}
+         	</li>
+         	<li>
+         		<strong>Closing Time: </strong>{{restaurant.closing_time}}
+         	</li>
+         </ul>
     {% endfor %}
+
+<br><br>
+<form action="{% url 'restaurant_list' %}" method= "GET" class="input-group">
+    <input type="text" name="search" placeholder="Search for Restaurant..." class="form-control" value="{{request.GET.search}}">
+    <div class="input-group-append">
+        <input type="submit" value="Search" class="btn btn-outline-dark">
+    </div>
+</form>
+<br><br>
+
+
 </body>
 </html>
